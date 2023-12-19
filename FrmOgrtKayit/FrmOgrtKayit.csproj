@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{16C675E7-3171-4972-B067-917B292039CE}</ProjectGuid>
+    <ProjectGuid>{806CCF85-EBFB-4204-949E-B61287B6C3DF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>OkulApp</RootNamespace>
-    <AssemblyName>OkulApp</AssemblyName>
+    <RootNamespace>FrmOgrtKayit</RootNamespace>
+    <AssemblyName>FrmOgrtKayit</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,14 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,26 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmOgrKayit.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOgrKayit.Designer.cs">
-      <DependentUpon>FrmOgrKayit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmOgrtKayit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmOgrtKayit.Designer.cs">
-      <DependentUpon>FrmOgrtKayit.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmOgrKayit.resx">
-      <DependentUpon>FrmOgrKayit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmOgrtKayit.resx">
-      <DependentUpon>FrmOgrtKayit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,7 +63,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,16 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OkulApp.BLL\OkulApp.BLL.csproj">
-      <Project>{396cfc17-5ebc-460f-8d66-666dff91d0a2}</Project>
-      <Name>OkulApp.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OkulAppMODEL\OkulApp.MODEL.csproj">
-      <Project>{29E8473C-B302-45E9-B99E-6FA6D424338F}</Project>
-      <Name>OkulApp.MODEL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
