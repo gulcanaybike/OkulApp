@@ -30,6 +30,12 @@ namespace OkulApp
                 var obl = new OgrenciBL();
                 bool sonuc = obl.OgrenciEkle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim() });
                 MessageBox.Show(sonuc ? "Ekleme Başarılı" : "Ekleme Başarısız!!");
+                txtAd.Text = "";
+                txtSoyad.Text = "";
+                txtNumara.Text = "";
+
+                btnGuncelle.Enabled = false;
+                btnSil.Enabled = false;
             }
             catch (SqlException ex)
             {
@@ -99,24 +105,77 @@ namespace OkulApp
 
         private void btnBul_Click(object sender, EventArgs e)
         {
-            frmOgrBul frm = new frmOgrBul(this);
-            frm.Show();
+            try
+            {
+                frmOgrBul frm = new frmOgrBul(this);
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bulma işlemi sırasında bir hata oluştu!!");
+            }
+
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            var obl = new OgrenciBL();
-            MessageBox.Show( obl.OgrenciGuncelle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), Ogrenciid = Ogrenciid }) ? "Güncelleme Başarılı": "Güncelleme Başrısız!!");
+            try
+            {
+                var obl = new OgrenciBL();
+                MessageBox.Show(obl.OgrenciGuncelle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), Ogrenciid = Ogrenciid }) ? "Güncelleme Başarılı" : "Güncelleme Başrısız!!");
+                txtAd.Text = "";
+                txtSoyad.Text = "";
+                txtNumara.Text = "";
+
+                btnGuncelle.Enabled = false;
+                btnSil.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Güncelleme işlemi sırasında bir hata oluştu!!");
+            }
+
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var obl = new OgrenciBL();
-            //obl.OgrenciSil(Ogrenciid);
-            MessageBox.Show(obl.OgrenciSil(Ogrenciid) ? "Silme Başarılı" : "Silme Başarısız!!");
+            try
+            {
+                var obl = new OgrenciBL();
+                //obl.OgrenciSil(Ogrenciid);
+                MessageBox.Show(obl.OgrenciSil(Ogrenciid) ? "Silme Başarılı" : "Silme Başarısız!!");
+                txtAd.Text = "";
+                txtSoyad.Text = "";
+                txtNumara.Text = "";
+
+                btnGuncelle.Enabled = false;
+                btnSil.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Silme işlemi sırasında bir hata oluştu!!");
+            }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtAd.Text = "";
+                txtSoyad.Text = "";
+                txtNumara.Text = "";
+
+                btnGuncelle.Enabled = false;
+                btnSil.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Temizleme işlemi sırasında bir hata oluştu!!");
+            }
+
         }
     }
-    //Güncelleme Başarılı mesajı
+    //Güncelleme Başarılı mesajı 
     //Güncelleme butonu aktifliği?
     //Silme butonu aktifliği
     //Silme işlemi mesajı

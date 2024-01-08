@@ -39,6 +39,7 @@
             this.btnBul = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.grpOgrenci.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +128,7 @@
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.Enabled = false;
             this.btnGuncelle.Location = new System.Drawing.Point(192, 304);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(114, 38);
@@ -137,6 +139,7 @@
             // 
             // btnSil
             // 
+            this.btnSil.Enabled = false;
             this.btnSil.Location = new System.Drawing.Point(192, 381);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(114, 37);
@@ -145,11 +148,22 @@
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(352, 381);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(93, 37);
+            this.btnTemizle.TabIndex = 13;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // FrmOgrKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 450);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnBul);
@@ -171,11 +185,12 @@
         private System.Windows.Forms.Label lblAd;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnBul;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.Button btnSil;
         public System.Windows.Forms.TextBox txtNumara;
         public System.Windows.Forms.TextBox txtSoyad;
         public System.Windows.Forms.TextBox txtAd;
+        public System.Windows.Forms.Button btnGuncelle;
+        public System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnTemizle;
     }
 }
 

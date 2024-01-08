@@ -15,6 +15,7 @@ namespace OkulApp
     public partial class frmOgrBul : Form
     {
         FrmOgrKayit frm;
+        
 
         public frmOgrBul(FrmOgrKayit frm)
         {
@@ -32,11 +33,17 @@ namespace OkulApp
                 frm.txtSoyad.Text = ogr.Soyad;
                 frm.txtNumara.Text = ogr.Numara;
                 frm.Ogrenciid = ogr.Ogrenciid;
+
+                frm.btnGuncelle.Enabled = true;
+                frm.btnSil.Enabled = true;
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Öğrenci Bulunamadı!!");
+                this.Close();
             }
+           
         }
     }
 }
